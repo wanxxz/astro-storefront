@@ -1,0 +1,23 @@
+---
+import BuyButton from './buy-button.astro'
+import Price from './price.astro'
+
+const { product } = Astro.props as Props
+---
+
+<a href={`/products/${product.id}`} class="group block overflow-hidden">
+  <div class="relative h-[350px] sm:h-[450px]">
+    <img
+      src={product.images[0]}
+      class="h-[350px] w-full object-cover transition duration-500 group-hover:scale-105 sm:h-[450px]"
+    />
+  </div>
+
+  <div class="relative bg-white pt-3">
+    <h3 class="text-sm text-gray-700 group-hover:underline group-hover:underline-offset-4">
+      {product.name}
+    </h3>
+
+    <p class="mt-1.5 tracking-wide text-gray-900"><Price id={product.default_price} /></p>
+  </div>
+</a>

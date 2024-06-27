@@ -1,0 +1,13 @@
+---
+import { stripe } from '../lib/stripe'
+
+interface Props {
+  id: string
+}
+
+const { id } = Astro.props
+
+const price = await stripe.prices.retrieve(id)
+---
+
+{price.unit_amount_decimal}

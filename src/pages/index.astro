@@ -1,0 +1,12 @@
+---
+import BaseLayout from '../layouts/base.astro'
+import Products from '../components/products.astro'
+import { stripe } from '../lib/stripe'
+
+const title = ''
+const { data: products } = await stripe.products.list()
+---
+
+<BaseLayout title={title}>
+  <Products products={products} />
+</BaseLayout>

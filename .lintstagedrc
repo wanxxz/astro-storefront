@@ -1,0 +1,8 @@
+"*.{js,jsx,mjs,ts,tsx,html,css,json}":
+  - prettier --write
+
+"*.astro":
+  - prettier --parser astro --write
+
+"*.md":
+  - prettier --parser markdown --write
